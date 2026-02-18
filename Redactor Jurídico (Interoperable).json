@@ -1,0 +1,339 @@
+{
+    "name": "Redactor Jurídico (Interoperable)",
+    "nodes": [
+        {
+            "parameters": {
+                "resource": "chat",
+                "chatModel": "gpt-4.1-nano",
+                "prompt": {
+                    "messages": [
+                        {
+                            "role": "=asistente profesional de llamadas y siendo seriamente resptable con el limite legal de la República de El Salvador",
+                            "content": "tarea: redactar "
+                        }
+                    ]
+                },
+                "options": {},
+                "requestOptions": {}
+            },
+            "id": "fb4c40cf-687f-41fe-a72d-f2a78f55d82f",
+            "name": "Clasificador Legal (OpenAI)",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1.1,
+            "position": [
+                -352,
+                144
+            ],
+            "credentials": {
+                "openAiApi": {
+                    "id": "JiWYVo8Fnix6bzVU",
+                    "name": "n8n free OpenAI API credits"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "resource": "chat",
+                "options": {},
+                "requestOptions": {}
+            },
+            "id": "a41b0845-f65d-44ce-92d2-47b209269d5e",
+            "name": "Memorandum de Hechos",
+            "type": "n8n-nodes-base.openAi",
+            "typeVersion": 1.1,
+            "position": [
+                128,
+                144
+            ],
+            "credentials": {
+                "openAiApi": {
+                    "id": "JiWYVo8Fnix6bzVU",
+                    "name": "n8n free OpenAI API credits"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "operation": "appendOrUpdate",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1086bEVP9rsVs7_j3v6HKIdboYUHic4TkhJPnw5ZrGzA",
+                    "mode": "list",
+                    "cachedResultName": "leads_despachos_juridicos_puros",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1086bEVP9rsVs7_j3v6HKIdboYUHic4TkhJPnw5ZrGzA/edit?usp=drivesdk"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": 688481827,
+                    "mode": "list",
+                    "cachedResultName": "Hoja 6",
+                    "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1086bEVP9rsVs7_j3v6HKIdboYUHic4TkhJPnw5ZrGzA/edit#gid=688481827"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {},
+                    "matchingColumns": [],
+                    "schema": [
+                        {
+                            "id": "Name",
+                            "displayName": "Name",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Job Title",
+                            "displayName": "Job Title",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Company",
+                            "displayName": "Company",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Company Description",
+                            "displayName": "Company Description",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Emails",
+                            "displayName": "Emails",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Phone Numbers",
+                            "displayName": "Phone Numbers",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Actions",
+                            "displayName": "Actions",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Links",
+                            "displayName": "Links",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Score",
+                            "displayName": "Score",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Location",
+                            "displayName": "Location",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Company Employees",
+                            "displayName": "Company Employees",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Industries",
+                            "displayName": "Industries",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        },
+                        {
+                            "id": "Company Keywords",
+                            "displayName": "Company Keywords",
+                            "required": false,
+                            "defaultMatch": false,
+                            "display": true,
+                            "type": "string",
+                            "canBeUsedToMatch": true
+                        }
+                    ],
+                    "attemptToConvertTypes": false,
+                    "convertFieldsToString": false
+                },
+                "options": {}
+            },
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.7,
+            "position": [
+                384,
+                144
+            ],
+            "id": "3a92f661-fe7e-4e58-b1b1-e847bcb02c06",
+            "name": "Append or update row in sheet",
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "srofJP9mfqkoU0uk",
+                    "name": "Google Sheets account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "sendTo": "Sheylamonrey@gmail.com",
+                "subject": "hola",
+                "message": "Hola mundo",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.gmail",
+            "typeVersion": 2.2,
+            "position": [
+                592,
+                144
+            ],
+            "id": "ceb03f23-2073-492f-af18-e00a4e848c72",
+            "name": "Send a message",
+            "webhookId": "19435456-69fd-4d1a-b9e1-f1f1c1d8c236",
+            "credentials": {
+                "gmailOAuth2": {
+                    "id": "KJSpddbSny2GCzeb",
+                    "name": "Gmail account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "entrada-caso-legal",
+                "options": {}
+            },
+            "id": "18d61586-2911-4e72-b2d5-ba52a86d833f",
+            "name": "Entrada de datos-WhatsApp/telegram",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                -560,
+                144
+            ],
+            "webhookId": "60d54e5a-0346-40bd-8636-1897242642cf"
+        },
+        {
+            "parameters": {
+                "jsCode": "const response = JSON.parse($input.first().json.message.content);\nreturn [ { json: response } ];"
+            },
+            "id": "7bcba3ec-829f-4a9b-a584-cff414395d80",
+            "name": "Parser",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                -128,
+                144
+            ]
+        }
+    ],
+    "pinData": {},
+    "connections": {
+        "Clasificador Legal (OpenAI)": {
+            "main": [
+                [
+                    {
+                        "node": "Parser",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Memorandum de Hechos": {
+            "main": [
+                [
+                    {
+                        "node": "Append or update row in sheet",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Append or update row in sheet": {
+            "main": [
+                [
+                    {
+                        "node": "Send a message",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Entrada de datos-WhatsApp/telegram": {
+            "main": [
+                [
+                    {
+                        "node": "Clasificador Legal (OpenAI)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Parser": {
+            "main": [
+                [
+                    {
+                        "node": "Memorandum de Hechos",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    ],
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "binaryMode": "separate",
+        "availableInMCP": false
+    },
+    "versionId": "1fdea5c5-e107-4a11-94f7-698ff1043741",
+    "meta": {
+        "templateCredsSetupCompleted": true,
+        "instanceId": "97f91c718111e75a2e02ba340a367b356df434e5fefe2542447e6963b4189a6a"
+    },
+    "id": "y0SEPi98Tp3tFkd3",
+    "tags": []
+}
